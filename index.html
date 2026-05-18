@@ -14,22 +14,23 @@
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-      --primary: #6366f1;
-      --primary-dark: #4f46e5;
-      --accent: #f59e0b;
+      --primary: #b8860b;
+      --primary-dark: #996515;
+      --accent: #c9a84c;
       --demo-badge: #ef4444;
-      --bg: #0f172a;
-      --bg-card: #1e293b;
-      --bg-card-hover: #334155;
-      --text: #f1f5f9;
-      --text-muted: #94a3b8;
-      --border: #334155;
+      --bg: #faf8f5;
+      --bg-card: #ffffff;
+      --bg-card-hover: #f5f0e8;
+      --text: #2c2c2c;
+      --text-muted: #6b6b6b;
+      --border: #e5ddd0;
       --radius: 16px;
     }
 
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       background: var(--bg);
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d4c9b0' fill-opacity='0.15'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
       color: var(--text);
       line-height: 1.6;
       min-height: 100vh;
@@ -45,7 +46,7 @@
       display: flex;
       align-items: flex-end;
       overflow: hidden;
-      background: linear-gradient(135deg, var(--primary-dark), var(--bg));
+      background: #2c2c2c;
     }
 
     .hero-image {
@@ -60,7 +61,7 @@
     .hero-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(to top, var(--bg) 0%, transparent 60%);
+      background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 60%);
     }
 
     .hero-content {
@@ -72,10 +73,13 @@
       width: 100%;
     }
 
+    .hero-content, .hero-content h1, .hero-content .subtitle { color: #fff; }
+    .hero-content .subtitle { color: rgba(255,255,255,0.8); }
+
     .event-date-badge {
       display: inline-block;
       background: var(--accent);
-      color: #000;
+      color: #fff;
       font-weight: 700;
       font-size: 0.85rem;
       padding: 6px 16px;
@@ -133,6 +137,7 @@
     }
 
     .info-card:hover { background: var(--bg-card-hover); }
+    .info-card { box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
 
     .info-card .label {
       font-size: 0.75rem;
@@ -183,6 +188,7 @@
       transition: border-color 0.2s;
     }
 
+    .post-row { box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
     .post-row:hover {
       border-color: var(--primary);
     }
