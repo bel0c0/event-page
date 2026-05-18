@@ -1,0 +1,22 @@
+{
+  "title": "Face to Face Networking Event",
+  "subtitle": "Connect. Collaborate. Grow.",
+  "date": "May 18, 2026",
+  "time": "6:00 PM - 9:00 PM",
+  "location": "Downtown Business Hub, 123 Main Street",
+  "description": "Join us for an exciting evening of face-to-face networking with local entrepreneurs, professionals, and community leaders. Build meaningful connections, share ideas, and discover new opportunities in a vibrant, welcoming atmosphere.",
+  "highlights": [
+    "Meet local business leaders",
+    "Live presentations & demos",
+    "Complimentary refreshments",
+    "Door prizes & giveaways"
+  ],
+  "rsvp_url": "",
+  "images": [
+    "images/hero.jpg"
+  ],
+  "contact": {
+    "email": "",
+    "phone": ""
+  }
+}
