@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Event Promotion</title>
-  <meta name="description" content="You're invited! Check out our upcoming event.">
+  <title>Demo Event — 2026 Culinary Delights at Glen Cove Mansion</title>
+  <meta name="description" content="DEMO EVENT — This is a demonstration page for the 2026 Culinary Delights at Glen Cove Mansion.">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Event Promotion">
-  <meta property="og:description" content="You're invited to our upcoming event!">
+  <meta property="og:title" content="Demo Event — Culinary Delights at Glen Cove Mansion">
+  <meta property="og:description" content="DEMO EVENT — This is a demonstration page.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
@@ -17,6 +17,7 @@
       --primary: #6366f1;
       --primary-dark: #4f46e5;
       --accent: #f59e0b;
+      --demo-badge: #ef4444;
       --bg: #0f172a;
       --bg-card: #1e293b;
       --bg-card-hover: #334155;
@@ -34,11 +35,25 @@
       min-height: 100vh;
     }
 
-    /* Hero Section */
+    /* ===== DEMO BANNER ===== */
+    .demo-banner {
+      background: var(--demo-badge);
+      color: #fff;
+      text-align: center;
+      padding: 10px 16px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      letter-spacing: 0.05em;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    /* ===== HERO ===== */
     .hero {
       position: relative;
       width: 100%;
-      min-height: 60vh;
+      min-height: 55vh;
       display: flex;
       align-items: flex-end;
       overflow: hidden;
@@ -51,7 +66,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      opacity: 0.4;
+      opacity: 0.35;
     }
 
     .hero-overlay {
@@ -77,31 +92,43 @@
       font-size: 0.85rem;
       padding: 6px 16px;
       border-radius: 100px;
-      margin-bottom: 16px;
+      margin-bottom: 12px;
       letter-spacing: 0.02em;
     }
 
+    .demo-tag {
+      display: inline-block;
+      background: var(--demo-badge);
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.75rem;
+      padding: 4px 12px;
+      border-radius: 100px;
+      margin-left: 8px;
+      letter-spacing: 0.05em;
+    }
+
     .hero h1 {
-      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-size: clamp(1.8rem, 5vw, 3rem);
       font-weight: 800;
       line-height: 1.1;
       margin-bottom: 8px;
     }
 
     .hero .subtitle {
-      font-size: clamp(1rem, 2.5vw, 1.3rem);
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
       color: var(--text-muted);
       font-weight: 400;
     }
 
-    /* Main Content */
+    /* ===== MAIN ===== */
     .main {
       max-width: 800px;
       margin: 0 auto;
       padding: 32px 24px 64px;
     }
 
-    /* Info Cards Row */
+    /* Info Cards */
     .info-row {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -117,9 +144,7 @@
       transition: background 0.2s;
     }
 
-    .info-card:hover {
-      background: var(--bg-card-hover);
-    }
+    .info-card:hover { background: var(--bg-card-hover); }
 
     .info-card .label {
       font-size: 0.75rem;
@@ -130,21 +155,14 @@
       font-weight: 600;
     }
 
-    .info-card .value {
-      font-size: 1.05rem;
-      font-weight: 600;
-    }
+    .info-card .value { font-size: 1.05rem; font-weight: 600; }
+    .info-card .icon { font-size: 1.3rem; margin-bottom: 8px; }
 
-    .info-card .icon {
-      font-size: 1.3rem;
-      margin-bottom: 8px;
-    }
-
-    /* Description Section */
+    /* Section Titles */
     .section-title {
       font-size: 1.3rem;
       font-weight: 700;
-      margin-bottom: 12px;
+      margin-bottom: 16px;
     }
 
     .description {
@@ -154,7 +172,69 @@
       margin-bottom: 40px;
     }
 
-    /* Highlights */
+    /* ===== POSTS TABLE (2-column) ===== */
+    .posts-section { margin-bottom: 40px; }
+
+    .posts-table {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    @media (max-width: 600px) {
+      .posts-table { grid-template-columns: 1fr; }
+    }
+
+    .post-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.2s, border-color 0.2s;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+
+    .post-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--primary);
+    }
+
+    .post-card-img {
+      width: 100%;
+      aspect-ratio: 16/10;
+      object-fit: cover;
+      display: block;
+    }
+
+    .post-card-body {
+      padding: 16px;
+    }
+
+    .post-card-title {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+
+    .post-card-excerpt {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    .post-card-readmore {
+      display: inline-block;
+      margin-top: 10px;
+      color: var(--primary);
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    /* ===== HIGHLIGHTS ===== */
     .highlights {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -184,227 +264,263 @@
       font-size: 0.85rem;
     }
 
-    .highlight-text {
-      font-weight: 500;
-      font-size: 0.95rem;
+    .highlight-text { font-weight: 500; font-size: 0.95rem; }
+
+    /* ===== DETAIL PAGE ===== */
+    .detail-page {
+      display: none;
+      min-height: 100vh;
     }
 
-    /* Gallery */
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 16px;
-      margin-bottom: 40px;
-    }
+    .detail-page.active { display: block; }
 
-    .gallery img {
-      width: 100%;
-      aspect-ratio: 16/10;
-      object-fit: cover;
-      border-radius: var(--radius);
-      border: 1px solid var(--border);
-    }
-
-    /* RSVP Button */
-    .rsvp-section {
-      text-align: center;
-      padding: 40px 0;
-    }
-
-    .rsvp-btn {
-      display: inline-block;
-      background: var(--primary);
-      color: #fff;
-      font-family: inherit;
-      font-size: 1.1rem;
-      font-weight: 700;
-      padding: 16px 48px;
-      border: none;
-      border-radius: 100px;
-      cursor: pointer;
-      text-decoration: none;
-      transition: background 0.2s, transform 0.1s;
-    }
-
-    .rsvp-btn:hover {
-      background: var(--primary-dark);
-      transform: translateY(-1px);
-    }
-
-    /* Contact */
-    .contact {
-      text-align: center;
-      color: var(--text-muted);
-      font-size: 0.9rem;
-      padding-bottom: 40px;
-    }
-
-    .contact a {
-      color: var(--primary);
-      text-decoration: none;
-    }
-
-    /* Loading State */
-    .loading {
-      display: flex;
+    .detail-back {
+      display: inline-flex;
       align-items: center;
-      justify-content: center;
-      min-height: 60vh;
-      font-size: 1.1rem;
-      color: var(--text-muted);
+      gap: 8px;
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 16px 24px;
+      transition: color 0.2s;
+      cursor: pointer;
+      background: none;
+      border: none;
+      font-family: inherit;
     }
 
-    /* Hidden until loaded */
-    .page-content { display: none; }
-    .page-content.loaded { display: block; }
+    .detail-back:hover { color: var(--primary); }
+
+    .detail-back svg {
+      width: 20px;
+      height: 20px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .detail-hero-img {
+      width: 100%;
+      max-height: 50vh;
+      object-fit: cover;
+      display: block;
+    }
+
+    .detail-content {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 32px 24px 64px;
+    }
+
+    .detail-title {
+      font-size: clamp(1.5rem, 4vw, 2.2rem);
+      font-weight: 800;
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+
+    .detail-body {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+
+    .detail-body p { margin-bottom: 16px; }
+
+    /* ===== VIEWS ===== */
+    .home-page { display: block; }
+    .home-page.hidden { display: none; }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: 24px;
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      border-top: 1px solid var(--border);
+    }
   </style>
 </head>
 <body>
 
-  <div class="loading" id="loading">Loading event details...</div>
+  <!-- DEMO BANNER -->
+  <div class="demo-banner">
+    THIS IS A DEMO EVENT — For demonstration purposes only
+  </div>
 
-  <div class="page-content" id="page">
+  <!-- ===== HOME PAGE ===== -->
+  <div class="home-page" id="home-page">
+
     <!-- Hero -->
-    <section class="hero" id="hero-section">
-      <img class="hero-image" id="hero-img" src="" alt="Event hero image">
+    <section class="hero">
+      <img class="hero-image" id="hero-img" src="images/hero.jpg" alt="Culinary Delights at Glen Cove Mansion">
       <div class="hero-overlay"></div>
       <div class="hero-content">
-        <div class="event-date-badge" id="hero-date"></div>
-        <h1 id="hero-title"></h1>
-        <p class="subtitle" id="hero-subtitle"></p>
+        <span class="event-date-badge">May 18, 2026</span>
+        <span class="demo-tag">DEMO</span>
+        <h1>Demo Event</h1>
+        <p class="subtitle">2026 Culinary Delights at Glen Cove Mansion</p>
       </div>
     </section>
 
-    <!-- Main Content -->
     <div class="main">
       <!-- Info Cards -->
       <div class="info-row">
         <div class="info-card">
           <div class="icon">&#128197;</div>
           <div class="label">Date</div>
-          <div class="value" id="info-date"></div>
+          <div class="value">May 18, 2026</div>
         </div>
         <div class="info-card">
           <div class="icon">&#128336;</div>
           <div class="label">Time</div>
-          <div class="value" id="info-time"></div>
+          <div class="value">6:00 PM - 9:00 PM</div>
         </div>
         <div class="info-card">
           <div class="icon">&#128205;</div>
           <div class="label">Location</div>
-          <div class="value" id="info-location"></div>
+          <div class="value">Glen Cove Mansion</div>
         </div>
       </div>
 
-      <!-- Description -->
+      <!-- About This Event -->
       <h2 class="section-title">About This Event</h2>
-      <p class="description" id="event-description"></p>
+      <p class="description">
+        Welcome to the 2026 Culinary Delights at Glen Cove Mansion — a demo event showcasing how our promotion platform works. This page is for demonstration purposes only and does not represent a real event. Explore the layout, tap on posts below, and see how content flows from our AI agent to a live web page in real time.
+      </p>
 
-      <!-- Highlights -->
-      <h2 class="section-title" id="highlights-title" style="display:none;">What to Expect</h2>
-      <div class="highlights" id="highlights-container"></div>
-
-      <!-- Gallery (additional images beyond the hero) -->
-      <div class="gallery" id="gallery"></div>
-
-      <!-- RSVP -->
-      <div class="rsvp-section" id="rsvp-section" style="display:none;">
-        <a class="rsvp-btn" id="rsvp-btn" href="#">RSVP Now</a>
+      <!-- Posts Table (2-column) -->
+      <div class="posts-section">
+        <h2 class="section-title">Featured Posts</h2>
+        <div class="posts-table" id="posts-table">
+          <!-- Posts are rendered by JS from the posts array -->
+        </div>
       </div>
 
-      <!-- Contact -->
-      <div class="contact" id="contact-section" style="display:none;"></div>
+      <!-- What to Expect -->
+      <h2 class="section-title">What to Expect</h2>
+      <div class="highlights">
+        <div class="highlight-item">
+          <div class="highlight-check">&#10003;</div>
+          <div class="highlight-text">Live cooking demonstrations</div>
+        </div>
+        <div class="highlight-item">
+          <div class="highlight-check">&#10003;</div>
+          <div class="highlight-text">Curated tasting stations</div>
+        </div>
+        <div class="highlight-item">
+          <div class="highlight-check">&#10003;</div>
+          <div class="highlight-text">Meet local chefs & artisans</div>
+        </div>
+        <div class="highlight-item">
+          <div class="highlight-check">&#10003;</div>
+          <div class="highlight-text">Networking with food enthusiasts</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      DEMO EVENT — This page is for demonstration purposes only.
+    </div>
+  </div>
+
+  <!-- ===== DETAIL PAGE ===== -->
+  <div class="detail-page" id="detail-page">
+    <button class="detail-back" id="detail-back" onclick="goHome()">
+      <svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      Back
+    </button>
+    <img class="detail-hero-img" id="detail-img" src="" alt="">
+    <div class="detail-content">
+      <h1 class="detail-title" id="detail-title"></h1>
+      <div class="detail-body" id="detail-body"></div>
+    </div>
+    <div class="footer">
+      DEMO EVENT — This page is for demonstration purposes only.
     </div>
   </div>
 
   <script>
-    async function loadEvent() {
-      try {
-        const res = await fetch('event.json?' + Date.now());
-        const ev = await res.json();
-
-        // Update meta tags
-        document.title = ev.title || 'Event';
-        document.querySelector('meta[property="og:title"]').content = ev.title || '';
-        document.querySelector('meta[property="og:description"]').content = ev.description || '';
-
-        // Hero
-        document.getElementById('hero-title').textContent = ev.title || '';
-        document.getElementById('hero-subtitle').textContent = ev.subtitle || '';
-        document.getElementById('hero-date').textContent = ev.date || '';
-
-        // Hero image
-        if (ev.images && ev.images.length > 0) {
-          document.getElementById('hero-img').src = ev.images[0];
-          document.getElementById('hero-img').alt = ev.title;
-        } else {
-          document.getElementById('hero-img').style.display = 'none';
-        }
-
-        // Info cards
-        document.getElementById('info-date').textContent = ev.date || 'TBA';
-        document.getElementById('info-time').textContent = ev.time || 'TBA';
-        document.getElementById('info-location').textContent = ev.location || 'TBA';
-
-        // Description
-        document.getElementById('event-description').textContent = ev.description || '';
-
-        // Highlights
-        if (ev.highlights && ev.highlights.length > 0) {
-          document.getElementById('highlights-title').style.display = 'block';
-          const container = document.getElementById('highlights-container');
-          ev.highlights.forEach(h => {
-            const item = document.createElement('div');
-            item.className = 'highlight-item';
-            item.innerHTML = `<div class="highlight-check">&#10003;</div><div class="highlight-text">${escapeHtml(h)}</div>`;
-            container.appendChild(item);
-          });
-        }
-
-        // Gallery (images beyond the first one)
-        if (ev.images && ev.images.length > 1) {
-          const gallery = document.getElementById('gallery');
-          ev.images.slice(1).forEach(src => {
-            const img = document.createElement('img');
-            img.src = src;
-            img.alt = 'Event photo';
-            img.loading = 'lazy';
-            gallery.appendChild(img);
-          });
-        }
-
-        // RSVP
-        if (ev.rsvp_url) {
-          document.getElementById('rsvp-section').style.display = 'block';
-          document.getElementById('rsvp-btn').href = ev.rsvp_url;
-        }
-
-        // Contact
-        const contactParts = [];
-        if (ev.contact && ev.contact.email) contactParts.push(`<a href="mailto:${escapeHtml(ev.contact.email)}">${escapeHtml(ev.contact.email)}</a>`);
-        if (ev.contact && ev.contact.phone) contactParts.push(`<a href="tel:${escapeHtml(ev.contact.phone)}">${escapeHtml(ev.contact.phone)}</a>`);
-        if (contactParts.length > 0) {
-          const sec = document.getElementById('contact-section');
-          sec.style.display = 'block';
-          sec.innerHTML = 'Questions? Reach out: ' + contactParts.join(' &middot; ');
-        }
-
-        // Show page
-        document.getElementById('loading').style.display = 'none';
-        document.getElementById('page').classList.add('loaded');
-      } catch (err) {
-        document.getElementById('loading').textContent = 'Event details coming soon!';
-        console.error('Failed to load event data:', err);
+    // ===== POSTS DATA (no database — just an array) =====
+    const posts = [
+      {
+        id: 1,
+        title: "A Taste of Glen Cove: Chef's Table Preview",
+        image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80",
+        excerpt: "Get a sneak peek at the exclusive chef's table experience. Our curated menu features locally sourced ingredients transformed into culinary masterpieces by award-winning chefs.",
+        body: `<p>Get a sneak peek at the exclusive chef's table experience planned for the 2026 Culinary Delights at Glen Cove Mansion. Our curated menu features locally sourced ingredients transformed into culinary masterpieces by award-winning chefs from across the region.</p>
+<p>This year's event brings together over a dozen acclaimed chefs, each presenting their signature dishes in an intimate, interactive setting within the mansion's historic dining halls. Guests will have the opportunity to watch live cooking demonstrations, ask questions, and sample dishes as they're prepared.</p>
+<p>From farm-fresh appetizers to decadent dessert pairings, every course has been thoughtfully designed to celebrate the rich culinary heritage of Long Island. Whether you're a seasoned foodie or simply curious about the craft, this evening promises an unforgettable journey through flavor and creativity.</p>
+<p><em>Note: This is demo content for demonstration purposes. No real event is being advertised.</em></p>`
       }
+    ];
+
+    // ===== RENDER POSTS =====
+    function renderPosts() {
+      const container = document.getElementById('posts-table');
+      container.innerHTML = '';
+      posts.forEach(post => {
+        const card = document.createElement('a');
+        card.className = 'post-card';
+        card.href = '#post/' + post.id;
+        card.innerHTML = `
+          <img class="post-card-img" src="${post.image}" alt="${post.title}" loading="lazy">
+          <div class="post-card-body">
+            <div class="post-card-title">${post.title}</div>
+            <div class="post-card-excerpt">${post.excerpt}</div>
+            <span class="post-card-readmore">Read more &rarr;</span>
+          </div>
+        `;
+        container.appendChild(card);
+      });
     }
 
-    function escapeHtml(str) {
-      const div = document.createElement('div');
-      div.textContent = str;
-      return div.innerHTML;
+    // ===== ROUTING =====
+    function route() {
+      const hash = window.location.hash;
+      const match = hash.match(/^#post\/(\d+)$/);
+
+      if (match) {
+        const postId = parseInt(match[1]);
+        const post = posts.find(p => p.id === postId);
+        if (post) {
+          showDetail(post);
+          return;
+        }
+      }
+      showHome();
     }
 
-    loadEvent();
+    function showHome() {
+      document.getElementById('home-page').classList.remove('hidden');
+      document.getElementById('detail-page').classList.remove('active');
+      window.scrollTo(0, 0);
+    }
+
+    function showDetail(post) {
+      document.getElementById('home-page').classList.add('hidden');
+      const detail = document.getElementById('detail-page');
+      detail.classList.add('active');
+
+      document.getElementById('detail-img').src = post.image;
+      document.getElementById('detail-img').alt = post.title;
+      document.getElementById('detail-title').textContent = post.title;
+      document.getElementById('detail-body').innerHTML = post.body;
+
+      window.scrollTo(0, 0);
+    }
+
+    function goHome() {
+      window.location.hash = '';
+    }
+
+    // ===== INIT =====
+    window.addEventListener('hashchange', route);
+    renderPosts();
+    route();
   </script>
 </body>
 </html>
